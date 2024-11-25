@@ -4,7 +4,6 @@
 #include <Adafruit_Sensor.h>
 #include <DHT.h>
 #include <ArduinoJson.h>
-#include <time.h>
 #include <NTPClient.h>
 #include <WiFiUdp.h>
 
