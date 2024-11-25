@@ -109,11 +109,13 @@ void setup()
   Serial.begin(115200);
   pinMode(DHTPIN, INPUT);
   pinMode(Relay, OUTPUT);
+  pinMode(2, OUTPUT);
 
   setupWiFi();
   espClient.setInsecure(); // Bỏ qua kiểm tra chứng chỉ SSL
 
   timeClient.begin();
+  timeClient.update();
 
   client.setServer(mqtt_server, mqtt_port);
   client.setCallback(callback); // Đăng ký hàm callback để xử lý tin nhắn
@@ -132,13 +134,13 @@ void loop()
   // Gửi dữ liệu định kỳ lên MQTT broker
   static unsigned long lastMsg = 0;
   unsigned long now = millis();
-  if (now - lastMsg > 5000)
-  { // Mỗi 5 giây gửi 1 lần
+  if (now - lastMsg > 30000)
+  { // Mỗi 30 giây gửi 1 lần
     lastMsg = now;
-
+    digitalWrite(2, 1); // Bật đèn LED
     // Cập nhật thời gian thực từ NTP
     timeClient.update();
-    String currentTime = timeClient.getFormattedTime(); // Thời gian dạng HH:MM:SS
+    unsigned long currentTime = timeClient.getEpochTime(); // Thời gian tính từ 1/1/1970
 
     float h = dht.readHumidity();
     float t = dht.readTemperature(); // Đọc nhiệt độ
@@ -167,5 +169,6 @@ void loop()
     Serial.print("Gửi dữ liệu JSON: ");
     Serial.println(jsonBuffer);
     client.publish(mqtt_publish_topic, jsonBuffer);
+    digitalWrite(2, 0); // Tắt đèn LED
   }
 }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Realtime Database</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.34/moment-timezone-with-data.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.34/builds/moment-timezone-with-data.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@0.1.1"></script>
+    <script type="module" src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>IOT PROJECT HUY NGUYEN ^-^</h1>
+        <div id="connection-status" class="connection-status">Trạng thái kết nối: Offline</div>
+        <div class="data-display">
+            <div class="data-item">
+                <h2>Nhiệt độ</h2>
+                <p id="temperature">-- °C</p>
+            </div>
+            <div class="data-item">
+                <h2>Độ ẩm</h2>
+                <p id="humidity">-- %</p>
+            </div>
+        </div>
+        <h1>Biểu đồ Nhiệt Độ</h1>
+        <canvas id="tempChart" width="600" height="400"></canvas>
+        <label class="switch">
+            <input type="checkbox" id="toggle-switch" title="Toggle Switch">
+            <span class="slider"></span>
+        </label>
+    </div>
+</body>
+
+</html>
