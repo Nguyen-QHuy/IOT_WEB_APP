@@ -1,3 +1,7 @@
+/*ESP32 gửi thông tin nhiệt độ, độ ẩm, và thời gian mỗi 30s lên MQTT
+  Đồng thời bật tắt relay khi có thông tin gửi về từ MQTT*/
+
+
 #include <WiFi.h>
 #include <WiFiClientSecure.h>
 #include <PubSubClient.h>
