@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/f562c076-e925-47de-bb99-ba7936ab23da)# I. Tạo MQTT broker và Firebase
+# I. Tạo MQTT broker và Firebase
 ## 1. Tạo MQTT broker với HIveMQ:
 1. Đăng ký tài khoản HiveMQ cloud tại [đây](https://www.hivemq.com/company/get-hivemq/)
 2. Chọn "**Create new clusster**"
@@ -53,6 +53,7 @@ const char *mqtt_subscribe_topic = "Your_subscribe_topic";                      
   node -v
   npm -v
 ```
+![image](https://github.com/user-attachments/assets/f562c076-e925-47de-bb99-ba7936ab23da)
 > Nếu Powershell trả về số phiên bản của node và npm là thành công, nếu không được hãy cài đặt lại Node.js
 
 ## 2. Cài đặt thư viện:
