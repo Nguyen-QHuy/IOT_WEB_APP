@@ -30,7 +30,7 @@
 | GPIO 15       | S         |           |
 
 # III. Kết nối ESP32 với MQTT
-Lấy [code ESP32](Learning\Testing_project\Client\Esp32_Client\src\main.cpp) và thay đổi đoạn code phía dưới bằng thông tin wifi và HiveMQ của bạn.
+Lấy [code ESP32](https://github.com/Nguyen-QHuy/IOT_WEB_APP/blob/main/Learning/Testing_project/Client/Esp32_Client/src/main.cpp) và thay đổi đoạn code phía dưới bằng thông tin wifi và HiveMQ của bạn.
 ``` C++
 const char *ssid = "SSID";        // Thay bằng tên WiFi của bạn
 const char *password = "PASSWORD"; // Thay bằng mật khẩu WiFi
@@ -71,7 +71,7 @@ npm install mqtt firebase-admin
     - Thêm tệp JSON vào dự án Node.js:
 - Đặt tệp JSON vào thư mục dự án, ví dụ: firebase-admin.json.
 ## 4. Code:
-Lấy code [MQTT-Firebase](Learning/Testing_project/Website/MQTT.js) và thay đổi các thông tin dưới đây
+Lấy code [MQTT-Firebase](https://github.com/Nguyen-QHuy/IOT_WEB_APP/blob/main/Learning/Testing_project/Website/MQTT.js) và thay đổi các thông tin dưới đây
 ``` Javascript
 // Sử dụng dotenv để lấy thông tin MQTT từ file .env
 require('dotenv').config();
